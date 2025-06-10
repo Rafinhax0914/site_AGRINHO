@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuBtn = document.getElementById("mobileMenuBtn")
   const mobileMenu = document.getElementById("mobileMenu")
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.toggle("active")
   })
 
-  // Close mobile menu when clicking on a link
+ 
   const mobileMenuLinks = mobileMenu.querySelectorAll("a")
   mobileMenuLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Close mobile menu when clicking outside
+ 
   document.addEventListener("click", (event) => {
     if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
       mobileMenu.classList.remove("active")
     }
   })
 
-  // Smooth scrolling for anchor links
+ 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetElement = document.querySelector(targetId)
 
       if (targetElement) {
-        // Offset for fixed header
+       
         const headerHeight = document.querySelector(".header").offsetHeight
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Add active class to nav links based on scroll position
+ 
   const sections = document.querySelectorAll("section[id]")
 
   function highlightNavLink() {
@@ -68,6 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", highlightNavLink)
 
-  // Initialize highlight on page load
+
   highlightNavLink()
 })
